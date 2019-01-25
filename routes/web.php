@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/periodo', function () {
+    return view('GestionPeriodo.gestion_periodo');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
