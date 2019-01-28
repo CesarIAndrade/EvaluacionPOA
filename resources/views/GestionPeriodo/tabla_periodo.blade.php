@@ -9,7 +9,7 @@
         <th scope="col">Accion</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tabla_periodo">
       <tr>
 
       </tr>

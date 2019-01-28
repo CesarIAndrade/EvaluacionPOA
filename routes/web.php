@@ -11,12 +11,20 @@
 |
 */
 
+Auth::routes();
+
+// Home
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Periodos
 Route::get('/periodo', function () {
     return view('GestionPeriodo.gestion_periodo');
 });
-Auth::routes();
+Route::resource('/periodos', 'PeriodoController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
