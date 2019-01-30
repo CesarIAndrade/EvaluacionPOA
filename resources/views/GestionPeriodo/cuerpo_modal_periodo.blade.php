@@ -14,3 +14,5 @@
         </div>
     </div>
 </div>
+
+@include('GestionPeriodo.tabla_evaluacion')

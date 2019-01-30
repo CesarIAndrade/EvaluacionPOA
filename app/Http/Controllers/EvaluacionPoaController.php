@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EvaluacionPoa;
 use Illuminate\Http\Request;
+use Response;
 
 class EvaluacionPoaController extends Controller
 {
@@ -15,6 +16,8 @@ class EvaluacionPoaController extends Controller
     public function index()
     {
         //
+        $evaluacion_poa = EvaluacionPoa::all();
+        return response::json($evaluacion_poa);
     }
 
     /**

@@ -26,5 +26,7 @@ Route::get('/periodo', function () {
 });
 Route::resource('/periodos', 'PeriodoController');
 
+// Evaluacion Periodos
+Route::resource('/evaluacion_poa', 'EvaluacionPoaController');
 
 
