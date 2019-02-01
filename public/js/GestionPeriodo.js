@@ -3,7 +3,7 @@ $(document).ready(function () {
     listar_periodos();
     $('body').on('click', '.abrir_modal', function(){
         id_periodo = $(this).val();
-        llenar_evaluacion();
+        llenar_evaluacion_periodo();
         $('#modal_apertura_periodo').modal('show');
     })
 });
@@ -33,24 +33,43 @@ function listar_periodos(){
     );
 }
 
-function llenar_evaluacion() {
+function llenar_evaluacion_periodo() {
     $('#tabla_evaluacion').html('');
     var c = 1;
     $.get("evaluacion_poa",
         function (data) {
-            $.each(data, function (index, val) { 
+            $.each(data, function (index, val) {
+                clase = crear_clase_para_etapa(val.estado);
                 id_etapa = val.id;
                 var etapa = '<tr id="etapa'+val.id+'">\
                 <td>'+c+++'</td>\
                 <td>'+val.fecha_inicio+'</td>\
                 <td>'+val.fecha_fin+'</td>\
                 <td>'+val.numero+'</td>\
-                <td><button class="btn btn-success " id="etapa'+val.id+'" value="'+val.id+'">Habilitar</button></td>\
-                <td><button class="btn btn-danger" id="etapa'+val.id+'" value="'+val.id+'">Cerrar</button></td></tr>'
+                <td><center><button class="'+clase[0]+'" '+clase[2]+' id="etapa'+val.id+'" value="'+val.id+'">'+clase[1]+'</button></center></td></tr>'
                 $('#tabla_evaluacion').append(etapa);
             });
         },
     );
+}
+
+function crear_clase_para_etapa(estado){
+    if(estado == 'ND'){
+        var arreglo = ['btn btn-secondary', 'No Disponible', 'disabled'] 
+        return arreglo;
+    }
+    else if(estado == 'H'){
+        var arreglo = ['btn btn-info', 'Habilitar', ''] 
+        return arreglo;        
+    }
+    else if(estado == 'D'){
+        var arreglo = ['btn btn-danger', 'Deshabilitar', ''] 
+        return arreglo;        
+    }
+    else if(estado == 'E'){
+        var arreglo = ['btn btn-succes', 'Evaluado', 'disabled'] 
+        return arreglo;        
+    }
 }
 
 function actualizar_periodo(){

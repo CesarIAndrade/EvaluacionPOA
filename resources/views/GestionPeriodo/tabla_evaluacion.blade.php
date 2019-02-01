@@ -4,9 +4,8 @@
         <th scope="col">#</th>
         <th scope="col">Fecha de inicio</th>
         <th scope="col">Fecha fin</th>
-        <th scope="col">Numero</th>
-        <th scope="col">Habilitar</th>
-        <th scope="col">Cerrar</th>
+        <th scope="col">Etapa</th>
+        <th scope="col">Habilitar o Cerrar</th>
       </tr>
     </thead>
     <tbody id="tabla_evaluacion">
