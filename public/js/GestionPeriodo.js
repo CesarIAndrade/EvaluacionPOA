@@ -45,7 +45,7 @@ function llenar_evaluacion_periodo() {
                 <td>'+c+++'</td>\
                 <td>'+val.fecha_inicio+'</td>\
                 <td>'+val.fecha_fin+'</td>\
-                <td>'+val.numero+'</td>\
+                <td>'+val.etapa+'</td>\
                 <td><center><button class="'+clase[0]+'" '+clase[2]+' id="etapa'+val.id+'" value="'+val.id+'">'+clase[1]+'</button></center></td></tr>'
                 $('#tabla_evaluacion').append(etapa);
             });
