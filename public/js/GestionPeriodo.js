@@ -79,3 +79,7 @@ function actualizar_periodo(){
 function eliminar_periodo(){
 
 }
+function pruebaFecha() { 
+    var f = new Date();
+    alert(f.getDate() + "/" + (f.getMonth() +1) + "/" + (f.getFullYear()) + ":" + (f.getHours()) + ":" +  (f.getMinutes())+ ":" + (f.getSeconds()))
+ }
