@@ -80,6 +80,6 @@ function eliminar_periodo(){
 
 }
 function pruebaFecha() { 
-    var f = new Date();
+    var f = new Dates();
     alert(f.getDate() + "/" + (f.getMonth() +1) + "/" + (f.getFullYear()) + ":" + (f.getHours()) + ":" +  (f.getMinutes())+ ":" + (f.getSeconds()))
  }
