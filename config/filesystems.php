@@ -43,9 +43,9 @@ return [
 
     'disks' => [
 
-        'local' => [
+        'ArchivosSubidos' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => public_path('ArchivosSubidos'),
         ],
 
         'public' => [

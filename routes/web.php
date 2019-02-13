@@ -10,6 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//evidencias
+Route::get('/evidencias', function () {
+    return view('GestionEvidencias.gestion_evidencias');
+});
+Route::resource('/evidencia', 'MetaEvaluacionController');
+Route::get('/MetaEvaluacion/{id}', 'MetaEvaluacionController@ObtenerEvaluacion');
 
 Auth::routes();
 
@@ -29,21 +35,21 @@ Route::resource('/periodos', 'PeriodoController');
 Route::resource('/evaluacion_poa', 'EvaluacionPoaController');
 Route::put('/periodo/{id}', 'EvaluacionPoaController@actualizar_periodo_evaluacion');
 
+Route::get('evaluacion_poas/{id}','EvaluacionPoaController@BuscarPeriodo');
+Route::get('poaActivos','EvaluacionPoaController@obtenerActivos');
 
 
-//evidencias
-Route::get('/evidencias', function () {
-    return view('GestionEvidencias.gestion_evidencias');
-});
-Route::resource('/evidencia', 'MetaEvaluacionController');
 
-Route::get('/evidenciaDatos', 'MetaEvaluacionController@obtenerLista');
+
 
 //Indicadores
 Route::resource('/indicador', 'IndicadoresController');
+Route::get('/Indicador/{id}', 'IndicadoresController@buscar');
 
 //Metas
 Route::resource('/meta', 'MetaController');
+Route::get('/Meta/{id}', 'MetaController@buscar');
+
 
 //Proyectos
 Route::resource('/proyecto', 'ProyectosController');

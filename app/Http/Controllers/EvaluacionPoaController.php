@@ -93,7 +93,11 @@ class EvaluacionPoaController extends Controller
         return response::json($evaluacion_poa);
     }
 
-    
+    public function BuscarPeriodo($id)
+    {
+        $evaluacion_poa = EvaluacionPoa::find($id);
+        return response::json($evaluacion_poa);
+    }
     public function actualizar_periodo_evaluacion(request $request, $id){
         $evaluacion_poa = EvaluacionPoa::find($id);
         $evaluacion_poa->fecha_inicio_evaluacion = $request->fecha_inicio_evaluacion;
