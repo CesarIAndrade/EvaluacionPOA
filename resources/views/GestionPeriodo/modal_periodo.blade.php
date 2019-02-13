@@ -12,7 +12,7 @@
                     @include('GestionPeriodo.cuerpo_modal_periodo')
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Habilitar periodo</button>
+                    <button type="submit" class="btn btn-primary" id = "habilitar_periodo_de_evaluacion">Habilitar periodo</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </form>
