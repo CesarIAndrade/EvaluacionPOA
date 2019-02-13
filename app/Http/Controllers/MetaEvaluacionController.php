@@ -8,6 +8,7 @@ use App\Meta;
 use App\Indicadores;
 use App\Proyectos;
 use Response;
+use Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -89,9 +90,9 @@ class MetaEvaluacionController extends Controller
         //
     }
 
-    public function ObtenerEvaluacion($idPoa)
+    public function ObtenerEvaluacion($id)
     {
-        $metasEval=MetaEvaluacion::where('id_evaluacion', $idPoa) ->get();
+        $metasEval=MetaEvaluacion::where('id_evaluacion', $id) ->get();
         return Response::json($metasEval);
     }
 
@@ -99,5 +100,10 @@ class MetaEvaluacionController extends Controller
     {
         $metaeval=MetaEvaluacion::find($id);
         return Response::json($metaeval);
+    }
+
+    public function GuardarArchivo(Type $var = null)
+    {
+        # code...
     }
 }

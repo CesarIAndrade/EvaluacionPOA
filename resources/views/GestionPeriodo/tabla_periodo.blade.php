@@ -12,6 +12,7 @@
     </thead>
     <tbody id="tabla_periodos">
       <tr>
+        
       </tr>
     </tbody>
   </table>
