@@ -30,3 +30,24 @@ Route::resource('/periodos', 'PeriodoController');
 Route::resource('/evaluacion_poa', 'EvaluacionPoaController');
 
 
+
+//evidencias
+Route::get('/evidencias', function () {
+    return view('GestionEvidencias.gestion_evidencias');
+});
+Route::resource('/evidencia', 'MetaEvaluacionController');
+
+Route::get('/evidenciaDatos', 'MetaEvaluacionController@obtenerLista');
+
+//Indicadores
+Route::resource('/indicador', 'IndicadoresController');
+
+//Metas
+Route::resource('/meta', 'MetaController');
+
+//Proyectos
+Route::resource('/proyecto', 'ProyectosController');
+
+
+
+

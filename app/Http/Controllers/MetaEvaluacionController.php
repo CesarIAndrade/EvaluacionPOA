@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\MetaEvaluacion;
 use App\EvaluacionPoa;
-use Illuminate\Http\Request;
+use App\Meta;
+use App\Indicadores;
+use App\Proyectos;
 use Response;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class EvaluacionPoaController extends Controller
+class MetaEvaluacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +21,6 @@ class EvaluacionPoaController extends Controller
     public function index()
     {
         //
-        $evaluacion_poa = EvaluacionPoa::all();
-        return response::json($evaluacion_poa);
     }
 
     /**
@@ -38,16 +41,16 @@ class EvaluacionPoaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\MetaEvaluacion  $metaEvaluacion
      * @return \Illuminate\Http\Response
      */
-    public function show(EvaluacionPoa $evaluacionPoa)
+    public function show(MetaEvaluacion $metaEvaluacion)
     {
         //
     }
@@ -55,10 +58,10 @@ class EvaluacionPoaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\MetaEvaluacion  $metaEvaluacion
      * @return \Illuminate\Http\Response
      */
-    public function edit(EvaluacionPoa $evaluacionPoa)
+    public function edit(MetaEvaluacion $metaEvaluacion)
     {
         //
     }
@@ -67,10 +70,10 @@ class EvaluacionPoaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\MetaEvaluacion  $metaEvaluacion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EvaluacionPoa $evaluacionPoa)
+    public function update(Request $request, MetaEvaluacion $metaEvaluacion)
     {
         //
     }
@@ -78,20 +81,23 @@ class EvaluacionPoaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\MetaEvaluacion  $metaEvaluacion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EvaluacionPoa $evaluacionPoa)
+    public function destroy(MetaEvaluacion $metaEvaluacion)
     {
         //
     }
 
-    public function obtenerActivos()
+    public function ObtenerEvaluacion($idPoa)
     {
-        $valor="D";
-        $evaluacion_poa = EvaluacionPoa::where('estado', $valor) ->get();
-        return response::json($evaluacion_poa);
+        $metasEval=MetaEvaluacion::where('id_evaluacion', $idPoa) ->get();
+        return Response::json($metasEval);
     }
 
-    
+    public function buscar($id)
+    {
+        $metaeval=MetaEvaluacion::find($id);
+        return Response::json($metaeval);
+    }
 }

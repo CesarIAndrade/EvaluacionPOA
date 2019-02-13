@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\EvaluacionPoa;
-use Illuminate\Http\Request;
+use App\Indicadores;
 use Response;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class EvaluacionPoaController extends Controller
+class IndicadoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,6 @@ class EvaluacionPoaController extends Controller
     public function index()
     {
         //
-        $evaluacion_poa = EvaluacionPoa::all();
-        return response::json($evaluacion_poa);
     }
 
     /**
@@ -44,10 +43,10 @@ class EvaluacionPoaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\Indicadores  $indicadores
      * @return \Illuminate\Http\Response
      */
-    public function show(EvaluacionPoa $evaluacionPoa)
+    public function show(Indicadores $indicadores)
     {
         //
     }
@@ -55,10 +54,10 @@ class EvaluacionPoaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\Indicadores  $indicadores
      * @return \Illuminate\Http\Response
      */
-    public function edit(EvaluacionPoa $evaluacionPoa)
+    public function edit(Indicadores $indicadores)
     {
         //
     }
@@ -67,10 +66,10 @@ class EvaluacionPoaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\Indicadores  $indicadores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EvaluacionPoa $evaluacionPoa)
+    public function update(Request $request, Indicadores $indicadores)
     {
         //
     }
@@ -78,20 +77,17 @@ class EvaluacionPoaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EvaluacionPoa  $evaluacionPoa
+     * @param  \App\Indicadores  $indicadores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EvaluacionPoa $evaluacionPoa)
+    public function destroy(Indicadores $indicadores)
     {
         //
     }
 
-    public function obtenerActivos()
+    public function buscar($id)
     {
-        $valor="D";
-        $evaluacion_poa = EvaluacionPoa::where('estado', $valor) ->get();
-        return response::json($evaluacion_poa);
+        $indicador=Indicadores::find($id);
+        return Response::json($indicador);
     }
-
-    
 }
