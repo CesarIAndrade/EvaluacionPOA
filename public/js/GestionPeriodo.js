@@ -81,13 +81,14 @@ function llenar_evaluacion_periodo() {
     var c = 1;
     $.get("evaluacion_poa", function (data) {
         $.each(data, function (index, val) {
-            clases=crear_clase_para_etapa(val.estado)
+            clase = crear_clase_para_etapa(val.estado);
+            console.log(clase);
             var etapa = '<tr id="etapa' + val.id + '">\
                 <td>'+ c++ + '</td>\
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.etapa + '</td>\
-                <td><center><button class="seleccionado '+clases[0]+'" id="etapa' + val.id + '" value="' + val.id + '">clases[1]</button></center></td></tr>'
+                <td><center><button class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="' + val.id + '" '+clase[2]+'>'+clase[1]+'</button></center></td></tr>'
             $('#tabla_evaluacion').append(etapa);
         });
     });
