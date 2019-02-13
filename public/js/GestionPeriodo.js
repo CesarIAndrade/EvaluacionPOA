@@ -82,7 +82,6 @@ function llenar_evaluacion_periodo() {
     $.get("evaluacion_poa", function (data) {
         $.each(data, function (index, val) {
             clase = crear_clase_para_etapa(val.estado);
-            console.log(clase);
             var etapa = '<tr id="etapa' + val.id + '">\
                 <td>'+ c++ + '</td>\
                 <td>'+ val.fecha_inicio + '</td>\
@@ -95,20 +94,12 @@ function llenar_evaluacion_periodo() {
 }
 
 function crear_clase_para_etapa(estado) {
-    if (estado == 'ND') {
-        var arreglo = ['btn btn-secondary', 'No Disponible', 'disabled']
-        return arreglo;
-    }
-    else if (estado == 'H') {
-        var arreglo = ['btn btn-info', 'Habilitar', '']
+    if (estado == 'H') {
+        var arreglo = ['btn btn-succes', 'Habilitar', '']
         return arreglo;
     }
     else if (estado == 'D') {
         var arreglo = ['btn btn-danger', 'Deshabilitar', '']
-        return arreglo;
-    }
-    else if (estado == 'E') {
-        var arreglo = ['btn btn-succes', 'Evaluado', 'disabled']
         return arreglo;
     }
 }
