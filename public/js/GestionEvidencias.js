@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     GargarTodo()
     $(document).on("submit","#formulario_subida_evidencias",function (e) {
@@ -19,15 +20,16 @@ $(document).ready(function () {
             processData:false,
             dataType: "json",
             success: function (val) {
-                alert("Evidencia almacenada correctamente");
+                alert("Evidencia almacenada correctamente")
             },
             error: function (val) {
                 console.log('Error:', val)
             }
         });
         $('#formulario_subida_evidencias').trigger('reset');
-        //$('#nombre_archivo').text('Subir Archivo');
+        $('#nombre_archivo').text('Subir Archivo');
         $('#modal_subida_evidencia').modal('hide');
+
     });
 });
 
@@ -50,30 +52,30 @@ $(document).ready(function () {
     })
     return valor
  }
-
  function GuardarArchivo() {
      
  }
-
 function MostrarModalEvidencias(id, porcentaje) {
     $('#formulario_subida_evidencias').trigger('reset');
-    //$('#nombre_archivo').text('Subir Archivo');
+    $('#nombre_archivo').text('Subir Archivo');
     $('#modal_subida_evidencia').modal('show');
-    $('#formulario_subida_evidencias').val(id);
-    $.get("buscarEvidencia/"+id, function (data) {
+    $('#formulario_subida_evidencias').val(id)
+    $.get("buscarEvidencia/"+id,
+    function (data) {
         if(data.evidencia==null||data.evidencia==""){
             $('#contenido_evidencia').hide();
         }
         else{
             $('#contenido_evidencia').show();
-            $('#id_porcentaje_cumplido').val(data.porcentaje_cumplido);
-            $('#archivo_disponible').val(data.evidencia);
+            $('#id_porcentaje_cumplido').val(data.porcentaje_cumplido)
+            $('#archivo_disponible').val(data.evidencia)
         }
-        },"json"
-    );
-    $('#id_porcentaje_esperado').val(porcentaje);
-}
+    },
+    "json"
+);
+    $('#id_porcentaje_esperado').val(porcentaje)
 
+}
  //cargar datos en la tabla
 function GargarTodo() {
     $('#tabla_lista_metas_evidencias').html('');
@@ -120,7 +122,9 @@ function GargarTodo() {
                 })
                 .fail(function() {
                     console.log("error");
-                })   
+                })
+                
+                
             });
         },
     );
