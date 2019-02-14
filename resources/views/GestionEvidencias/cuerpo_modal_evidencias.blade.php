@@ -11,9 +11,9 @@
             <input autocomplete="off" name="porcentaje_cumplido" id="id_porcentaje_cumplido" value="" type="text" class="form-control" required autofocus>
         </div>
     </div>
-</div>  
+</div> 
 
-<div class="form-div" id="id_evidencias" >
+<div class="form-div" id="id_evidencias" style = "display:flex; justify-content: flex-end;">
     <label class ="btn btn-info" for="archivo_subido">
         <span id = "nombre_archivo">Subir Archivo</span>
     </label>
