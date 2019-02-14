@@ -17,6 +17,7 @@ Route::get('/evidencias', function () {
 Route::resource('/evidencia', 'MetaEvaluacionController');
 Route::get('/MetaEvaluacion/{id}', 'MetaEvaluacionController@ObtenerEvaluacion');
 Route::post('/subirEvidencia/{id}', 'MetaEvaluacionController@GuardarArchivo');
+Route::get('/buscarEvidencia/{id}', 'MetaEvaluacionController@buscar');
 
 
 Auth::routes();

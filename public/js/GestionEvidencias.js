@@ -6,7 +6,6 @@ $(document).ready(function () {
         var formData = new FormData($(this)[0]);
         console.log(formData)
         var id=$(this).val()
-        debugger
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -27,8 +26,9 @@ $(document).ready(function () {
                 console.log('Error:', val)
             }
         });
-        $('#modal_subida_evidencia').modal('hide');
         $('#formulario_subida_evidencias').trigger('reset');
+        $('#nombre_archivo').text('Subir Archivo');
+        $('#modal_subida_evidencia').modal('hide');
 
     });
 });
@@ -55,17 +55,25 @@ $(document).ready(function () {
  function GuardarArchivo() {
      
  }
-function MostrarModalEvidencias(meta) {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+function MostrarModalEvidencias(id, porcentaje) {
     $('#formulario_subida_evidencias').trigger('reset');
+    $('#nombre_archivo').text('Subir Archivo');
     $('#modal_subida_evidencia').modal('show');
-    $('#formulario_subida_evidencias').val(meta.idmeta_evaluacion)
-
-    $('#id_porcentaje_esperado').val(meta.porcentaje)
+    $('#formulario_subida_evidencias').val(id)
+    $.get("buscarEvidencia/"+id,
+    function (data) {
+        if(data.evidencia==null||data.evidencia==""){
+            $('#contenido_evidencia').hide();
+        }
+        else{
+            $('#contenido_evidencia').show();
+            $('#id_porcentaje_cumplido').val(data.porcentaje_cumplido)
+            $('#archivo_disponible').val(data.evidencia)
+        }
+    },
+    "json"
+);
+    $('#id_porcentaje_esperado').val(porcentaje)
 
 }
  //cargar datos en la tabla
@@ -101,7 +109,7 @@ function GargarTodo() {
                             <td>'+ valorMeta.descripcion + '</td>\
                             <td>'+ poaA.fecha_inicio_evaluacion + '</td>\
                             <td>'+ poaA.fecha_fin_evaluacion + '</td>\
-                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE+')">Evidencia</button></td></tr>'
+                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE.idmeta_evaluacion+','+MetasE.porcentaje+')">Evidencia</button></td></tr>'
     
                             $('#tabla_lista_metas_evidencias').append(periodo);
                             c++

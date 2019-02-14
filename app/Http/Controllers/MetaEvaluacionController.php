@@ -100,7 +100,10 @@ class MetaEvaluacionController extends Controller
         $metaeval=MetaEvaluacion::find($id);
         return Response::json($metaeval);
     }
-
+    public function EliminarArchivo(Type $var = null)
+    {
+        # code...
+    }
     public function GuardarArchivo(request $request, $id)
     {
         $metaeval=MetaEvaluacion::find($id);
@@ -108,6 +111,9 @@ class MetaEvaluacionController extends Controller
         if ($request->hasFile('archivo')){ 
             $archivo=$request->file('archivo');
             $ruta=time().''.$archivo->getClientOriginalName();
+            if ($metaeval->evidencia!=null):
+                Storage::disk('ArchivosSubidos')->delete($metaeval->evidencia);
+            endif;            
             Storage::disk('ArchivosSubidos')->put($ruta, file_get_contents($archivo->getRealPath()));
             $metaeval->evidencia=$ruta;
             $metaeval->save();
