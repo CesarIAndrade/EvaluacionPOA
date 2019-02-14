@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="">
+            <form action="PUT">
                 <div class="modal-body">
                     @include('GestionPeriodo.cuerpo_modal_periodo')
                 </div>

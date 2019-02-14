@@ -20,27 +20,18 @@ Route::get('/MetaEvaluacion/{id}', 'MetaEvaluacionController@ObtenerEvaluacion')
 Auth::routes();
 
 // Home
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Periodos
-Route::get('/periodo', function () {
-    return view('GestionPeriodo.gestion_periodo');
-});
+Route::get('/periodo', function () {return view('GestionPeriodo.gestion_periodo');});
 Route::resource('/periodos', 'PeriodoController');
 
 // Evaluacion Periodos
 Route::resource('/evaluacion_poa', 'EvaluacionPoaController');
 Route::put('/periodo/{id}', 'EvaluacionPoaController@actualizar_periodo_evaluacion');
-
 Route::get('evaluacion_poas/{id}','EvaluacionPoaController@BuscarPeriodo');
 Route::get('poaActivos','EvaluacionPoaController@obtenerActivos');
-
-
-
-
 
 //Indicadores
 Route::resource('/indicador', 'IndicadoresController');
@@ -49,7 +40,6 @@ Route::get('/Indicador/{id}', 'IndicadoresController@buscar');
 //Metas
 Route::resource('/meta', 'MetaController');
 Route::get('/Meta/{id}', 'MetaController@buscar');
-
 
 //Proyectos
 Route::resource('/proyecto', 'ProyectosController');
