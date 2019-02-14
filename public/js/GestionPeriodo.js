@@ -57,7 +57,6 @@ function crear_periodo() {
     });
     $('#id_md_fecha_fin_periodo').val('');
     document.getElementById('id_md_fecha_fin_periodo').disabled = true;
-    
 }
 
 function listar_periodos() {
