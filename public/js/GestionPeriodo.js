@@ -56,6 +56,7 @@ function crear_periodo() {
         }
     });
     $('#id_md_fecha_fin_periodo').val('');
+    document.getElementById('id_md_fecha_fin_periodo').disabled = true;
 }
 
 function listar_periodos() {
@@ -71,8 +72,7 @@ function listar_periodos() {
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.estado + '</td>\
-                <td><button class="btn btn-success abrir_modal" id="periodo'+ val.id + '" value="' + val.id + '">Abrir Periodo</button></td>\
-                <td><button class="btn btn-danger" id="periodo'+ val.id + '" value="' + val.id + '">Eliminar Periodo</button></td></tr>'
+                <td><button class="btn btn-success abrir_modal" id="periodo'+ val.id + '" value="' + val.id + '">Abrir Periodo</button></td></tr>'
                 $('#tabla_periodos').append(periodo);
             });
         },
