@@ -121,4 +121,12 @@ class MetaEvaluacionController extends Controller
          } 
         
     }
+    public function GuardarEvaluacion(request $request, $id)
+    {
+        $metaeval=MetaEvaluacion::find($id);
+        $metaeval->porcentaje_evaluado=$request->porcentaje_evaluado;
+        $metaeval->save();
+        return Response::json($metaeval);  
+    }
+    
 }

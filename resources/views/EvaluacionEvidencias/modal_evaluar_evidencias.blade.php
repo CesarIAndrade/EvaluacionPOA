@@ -7,14 +7,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {{--  <form id="" method="POST" action="">  --}}
-                <form id="" files="true" role="form">    
+                <form id="formulario_evaluacion_evidencias">    
                 <div class="modal-body">
                     @include('EvaluacionEvidencias.cuerpo_modal_evaluar_evidencias')
                     @include('EvaluacionEvidencias.tabla_evidencias')
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" id = "">Guardar cambios</button>
+                    <button type="submit" class="btn btn-primary" >Guardar cambios</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </form>
