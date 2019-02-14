@@ -47,7 +47,7 @@ function crear_periodo() {
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.etapa + '</td>\
-                <td><center><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="' + val.id + '" '+clase[2]+'>'+clase[1]+'</button></center></td></tr>'
+                <td><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="' + val.id + '" '+clase[2]+'>'+clase[1]+'</button></td></tr>'
             $('#etapa' + val.id).replaceWith(etapa);
             $('#modal_apertura_periodo').trigger('reset');
         },
@@ -91,7 +91,7 @@ function llenar_evaluacion_periodo() {
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.etapa + '</td>\
-                <td><center><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="'+val.id+'" '+clase[2]+'>'+clase[1]+'</button></center></td></tr>'
+                <td><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="'+val.id+'" '+clase[2]+'>'+clase[1]+'</button></td></tr>'
             $('#tabla_evaluacion').append(etapa);
         });
     });
