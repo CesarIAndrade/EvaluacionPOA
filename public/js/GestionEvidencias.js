@@ -1,22 +1,35 @@
 
 $(document).ready(function () {
     GargarTodo()
-    $('#archivo_subido').change(function () {
-        console.log(this.files[0].mozFullPath)
-    });
-
     $(document).on("submit","#formulario_subida_evidencias",function (e) {
         e.preventDefault()
-        var formData=new FormData(this);
+        var formData = new FormData($(this)[0]);
+        console.log(formData)
         var id=$(this).val()
-        $.ajax({
-            type: "PUT",
-            url: "subirEvidencia"+id,
-            data: formData,
-            success: function (response) {
-                alert("Evidencia guardada")
+        debugger
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $.ajax({
+            type: "POST",
+            url: "subirEvidencia/" + id,
+            data: formData,
+            cache: false,
+            contentType:false,
+            processData:false,
+            dataType: "json",
+            success: function (val) {
+                alert("Evidencia almacenada correctamente")
+            },
+            error: function (val) {
+                console.log('Error:', val)
+            }
+        });
+        $('#modal_subida_evidencia').modal('hide');
+        $('#formulario_subida_evidencias').trigger('reset');
+
     });
 });
 
@@ -42,11 +55,17 @@ $(document).ready(function () {
  function GuardarArchivo() {
      
  }
-function MostrarModalEvidencias(id,porcentaje) {
+function MostrarModalEvidencias(id, porcentaje) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $('#formulario_subida_evidencias').trigger('reset');
     $('#modal_subida_evidencia').modal('show');
-    $('#modal_subida_evidencia').val(id)
-    $('#id_porcentaje_esperado').val(porcentaje)
+    $('#formulario_subida_evidencias').val(id)
+
+    $('#id_porcentaje_esperado').val('3')
 
 }
  //cargar datos en la tabla
@@ -68,7 +87,7 @@ function GargarTodo() {
                     dataType: 'json',
                 })
                 .done(function(metasEval) {
-                    $.each(metasEval, function (index1,MetasE) {
+                    $.each(metasEval, function (i, MetasE) {
                          
                         $.ajax({
                             url: 'Meta/'+MetasE.id_meta,
@@ -82,7 +101,7 @@ function GargarTodo() {
                             <td>'+ valorMeta.descripcion + '</td>\
                             <td>'+ poaA.fecha_inicio_evaluacion + '</td>\
                             <td>'+ poaA.fecha_fin_evaluacion + '</td>\
-                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE.idmeta_evaluacion+','+MetasE.porcentaje+')">Evidencia</button></td></tr>'
+                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE.idmeta_evaluacion+','+MetasE.evidencia+')">Evidencia</button></td></tr>'
     
                             $('#tabla_lista_metas_evidencias').append(periodo);
                             c++

@@ -1,4 +1,4 @@
-<div class="row">
+<div class = "row">
     <div class="col-md-6">
         <div class="form-group has-feedback">
             <label for="id_porcentaje_esperado">{{ __('Porcentaje esperado') }}</label>
@@ -11,9 +11,9 @@
             <input autocomplete="off" name="porcentaje_cumplido" id="id_porcentaje_cumplido" value="" type="text" class="form-control" required autofocus>
         </div>
     </div>
-</div>
+</div>  
 
-<div class="form-div">
+<div class="form-div" id="id_evidencias" >
     <label class ="btn btn-info" for="archivo_subido">
         <span id = "nombre_archivo">Subir Archivo</span>
     </label>
