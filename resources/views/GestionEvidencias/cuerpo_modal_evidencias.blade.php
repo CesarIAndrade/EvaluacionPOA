@@ -19,8 +19,8 @@
     </div>
     <div id="id_evidencias" class="col-md-12">
         <div class="form-group has-feedback border">
-            <label for="archivo_evidencia">{{ __('Subir Archivo PDF') }}</label>
-            <input name="archivo_evidencia" id="id_archivo_evidencia" value="ArchivosSubidos/1550157208_InformeReportes.pdf" class="form-control-file" type="file" required >
+            <label for="archivo_evidencia">{{ __('Archivo ya disponible') }}</label>
+            <label id="archivo_evidencia"></label>
         </div>
     </div>
 </div>

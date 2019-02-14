@@ -107,7 +107,7 @@ class MetaEvaluacionController extends Controller
         $metaeval->porcentaje_cumplido=$request->porcentaje_cumplido;
         if ($request->hasFile('archivo')){ 
             $archivo=$request->file('archivo');
-            $ruta=time().'_'.$archivo->getClientOriginalName();
+            $ruta=time().''.$archivo->getClientOriginalName();
             Storage::disk('ArchivosSubidos')->put($ruta, file_get_contents($archivo->getRealPath()));
             $metaeval->evidencia=$ruta;
             $metaeval->save();

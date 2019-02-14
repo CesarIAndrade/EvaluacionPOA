@@ -55,7 +55,7 @@ $(document).ready(function () {
  function GuardarArchivo() {
      
  }
-function MostrarModalEvidencias(id, porcentaje) {
+function MostrarModalEvidencias(meta) {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -63,9 +63,9 @@ function MostrarModalEvidencias(id, porcentaje) {
     });
     $('#formulario_subida_evidencias').trigger('reset');
     $('#modal_subida_evidencia').modal('show');
-    $('#formulario_subida_evidencias').val(id)
+    $('#formulario_subida_evidencias').val(meta.idmeta_evaluacion)
 
-    $('#id_porcentaje_esperado').val('3')
+    $('#id_porcentaje_esperado').val(meta.porcentaje)
 
 }
  //cargar datos en la tabla
@@ -101,7 +101,7 @@ function GargarTodo() {
                             <td>'+ valorMeta.descripcion + '</td>\
                             <td>'+ poaA.fecha_inicio_evaluacion + '</td>\
                             <td>'+ poaA.fecha_fin_evaluacion + '</td>\
-                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE.idmeta_evaluacion+','+MetasE.evidencia+')">Evidencia</button></td></tr>'
+                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE+')">Evidencia</button></td></tr>'
     
                             $('#tabla_lista_metas_evidencias').append(periodo);
                             c++
