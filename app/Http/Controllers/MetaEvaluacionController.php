@@ -102,8 +102,10 @@ class MetaEvaluacionController extends Controller
         return Response::json($metaeval);
     }
 
-    public function GuardarArchivo(Type $var = null)
+    public function GuardarArchivo(request $request,$id)
     {
-        # code...
+        $metaeval=MetaEvaluacion::find($id);
+        
+        return Response::json($metaeval);
     }
 }

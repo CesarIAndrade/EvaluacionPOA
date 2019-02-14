@@ -3,9 +3,7 @@
       <thead class="bg-info text-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Proyecto</th>
-          <th scope="col">Indicador</th>
-          <th scope="col">evaluacion</th>
+          <th scope="col">Evaluacion</th>
           <th scope="col">Meta</th>
           <th scope="col">Fecha de inicio evaluacion</th>
           <th scope="col">Fecha fin evaluacion</th>

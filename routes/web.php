@@ -10,12 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//evidencias
+// Gestion de evidencias
 Route::get('/evidencias', function () {
     return view('GestionEvidencias.gestion_evidencias');
 });
 Route::resource('/evidencia', 'MetaEvaluacionController');
 Route::get('/MetaEvaluacion/{id}', 'MetaEvaluacionController@ObtenerEvaluacion');
+Route::put('/subirEvidencia/{id}', 'MetaEvaluacionController@GuardarArchivo');
+
 
 Auth::routes();
 
