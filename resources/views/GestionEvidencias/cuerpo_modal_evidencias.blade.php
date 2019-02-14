@@ -1,10 +1,4 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="form-group has-feedback border">
-            <label for="archivo">{{ __('Subir Archivo PDF') }}</label>
-            <input name="archivo" id="id_archivo_subido" value="" class="form-control-file" type="file" required >
-        </div>
-    </div>
+<div class = "row">
     <div class="col-md-6">
         <div class="form-group has-feedback">
             <label for="id_porcentaje_esperado">{{ __('Porcentaje esperado') }}</label>
@@ -17,10 +11,32 @@
             <input autocomplete="off" name="porcentaje_cumplido" id="id_porcentaje_cumplido" value="" type="text" class="form-control" required autofocus>
         </div>
     </div>
-    <div id="id_evidencias" class="col-md-12">
-        <div class="form-group has-feedback border">
-            <label for="archivo_evidencia">{{ __('Archivo ya disponible') }}</label>
-            <label id="archivo_evidencia"></label>
+    <div class="col-md-12" id="contenido_evidencia">
+        <div class="form-group has-feedback">
+            <label for="archivo_disponible">{{ __('Archivo disponible') }}</label>
+            <input id="archivo_disponible"  value="" type="text" class="form-control" disabled>
         </div>
     </div>
+</div> 
+
+<div class="form-div" id="id_evidencias" style = "display:flex; justify-content: flex-end;">
+    <label class ="btn btn-info" for="archivo_subido">
+        <span id = "nombre_archivo">Subir Archivo</span>
+    </label>
+    <input multiple = "true" style = "display:none" autocomplete="off" id="archivo_subido" class="form-control" type="file" name="archivo" accept=".pdf" required >
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#archivo_subido').on('change', function(e){
+            var files = $(this)[0].files;
+            if(files.length >= 2){
+                $('#nombre_archivo').text(files.length + " archivos seleccionados")
+            }
+            else{
+                var file = e.target.value.split('\\').pop();
+                $('#nombre_archivo').text(file);
+            }
+        })
+    })
+</script>

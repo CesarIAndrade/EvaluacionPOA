@@ -81,12 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Seguimiento y Evaluación del Plan Operativo Anual
                 </div>
 
                 <div class="links">
                     <a href="/periodo">Gestión Periodos</a>
-                    <a href="">Gestión de Evidencias</a>
+                    <a href="/evidencias">Gestión de Evidencias</a>
                     <a href="">Evaluación de Evidencias</a>
                 </div>
             </div>
