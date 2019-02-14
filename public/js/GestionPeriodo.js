@@ -47,7 +47,7 @@ function crear_periodo() {
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.etapa + '</td>\
-                <td><center><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="' + val.id + '" '+clase[2]+'>'+clase[1]+'</button></center></td></tr>'
+                <td><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="' + val.id + '" '+clase[2]+'>'+clase[1]+'</button></td></tr>'
             $('#etapa' + val.id).replaceWith(etapa);
             $('#modal_apertura_periodo').trigger('reset');
         },
@@ -56,6 +56,8 @@ function crear_periodo() {
         }
     });
     $('#id_md_fecha_fin_periodo').val('');
+    document.getElementById('id_md_fecha_fin_periodo').disabled = true;
+    
 }
 
 function listar_periodos() {
@@ -71,8 +73,7 @@ function listar_periodos() {
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.estado + '</td>\
-                <td><button class="btn btn-success abrir_modal" id="periodo'+ val.id + '" value="' + val.id + '">Abrir Periodo</button></td>\
-                <td><button class="btn btn-danger" id="periodo'+ val.id + '" value="' + val.id + '">Eliminar Periodo</button></td></tr>'
+                <td><button class="btn btn-success abrir_modal" id="periodo'+ val.id + '" value="' + val.id + '">Abrir Periodo</button></td></tr>'
                 $('#tabla_periodos').append(periodo);
             });
         },
@@ -90,7 +91,7 @@ function llenar_evaluacion_periodo() {
                 <td>'+ val.fecha_inicio + '</td>\
                 <td>'+ val.fecha_fin + '</td>\
                 <td>'+ val.etapa + '</td>\
-                <td><center><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="'+val.id+'" '+clase[2]+'>'+clase[1]+'</button></center></td></tr>'
+                <td><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="'+val.id+'" '+clase[2]+'>'+clase[1]+'</button></td></tr>'
             $('#tabla_evaluacion').append(etapa);
         });
     });

@@ -24,7 +24,6 @@ Route::post('/subirEvidencia/{id}', 'MetaEvaluacionController@GuardarArchivo');
 Route::get('/buscarEvidencia/{id}', 'MetaEvaluacionController@buscar');
 Route::post('/evaluarEvidencia/{id}', 'MetaEvaluacionController@GuardarEvaluacion');
 
-
 // Periodos
 Route::get('/periodo', function () {return view('GestionPeriodo.gestion_periodo');});
 Route::resource('/periodos', 'PeriodoController');

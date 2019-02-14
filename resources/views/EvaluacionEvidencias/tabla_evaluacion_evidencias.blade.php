@@ -1,4 +1,4 @@
-<div class="table-responsive pre-scrollable">
+<div class="table-responsive pre-scrollable w-75 p-3 container table-bordered">
   <table class="table">
       <thead class="bg-info text-light">
         <tr>

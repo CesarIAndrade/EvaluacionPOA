@@ -31,13 +31,11 @@
         $('#archivo_subido').on('change', function(e){
             var files = $(this)[0].files;
             if(files.length >= 2){
-                // $('#nombre_archivo').text(files.length + " archivos seleccionados");
-                $('#archivo_disponible').val(files.length + " archivos seleccionados");                
+                $('#nombre_archivo').text(files.length + " archivos seleccionados");              
             }
             else{
                 var file = e.target.value.split('\\').pop();
-                // $('#nombre_archivo').text(file);
-                $('#archivo_disponible').val(file);
+                $('#nombre_archivo').text(file);
             }
         })
     })
