@@ -11,13 +11,10 @@
 |
 */
 // Gestion de evidencias
-Route::get('/evidencias', function () {
-    return view('GestionEvidencias.gestion_evidencias');
-});
+Route::get('/evidencias', function () {return view('GestionEvidencias.gestion_evidencias');});
 Route::resource('/evidencia', 'MetaEvaluacionController');
 Route::get('/MetaEvaluacion/{id}', 'MetaEvaluacionController@ObtenerEvaluacion');
 Route::post('/subirEvidencia/{id}', 'MetaEvaluacionController@GuardarArchivo');
-
 
 Auth::routes();
 
@@ -46,6 +43,8 @@ Route::get('/Meta/{id}', 'MetaController@buscar');
 //Proyectos
 Route::resource('/proyecto', 'ProyectosController');
 
+// Evaluacion Evidencias
+Route::get('/evaluacion_evidencias', function () {return view('EvaluacionEvidencias.evaluacion_evidencias');});
 
 
 
