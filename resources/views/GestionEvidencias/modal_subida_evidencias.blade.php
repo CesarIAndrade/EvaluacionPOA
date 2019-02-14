@@ -7,7 +7,6 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {{--  <form id="formulario_subida_evidencias" method="POST" enctype="multipart/form-data" action="{{ action('EstudiantesController@update', $id)}}">  --}}
                 <form id="formulario_subida_evidencias" files="true" role="form" enctype="multipart/form-data">    
                 <div class="modal-body">
                     @include('GestionEvidencias.cuerpo_modal_evidencias')
