@@ -20,5 +20,3 @@ $fecha = date('Y-m-d H:i:s');
         </div>
     </div>
 </div>
-
-@include('GestionPeriodo.tabla_evaluacion')
