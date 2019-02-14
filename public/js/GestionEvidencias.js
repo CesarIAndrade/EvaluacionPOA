@@ -1,6 +1,23 @@
 
 $(document).ready(function () {
     GargarTodo()
+    $('#archivo_subido').change(function () {
+        console.log(this.files[0].mozFullPath)
+    });
+
+    $(document).on("submit","#formulario_subida_evidencias",function (e) {
+        e.preventDefault()
+        var formData=new FormData(this);
+        var id=$(this).val()
+        $.ajax({
+            type: "PUT",
+            url: "subirEvidencia"+id,
+            data: formData,
+            success: function (response) {
+                alert("Evidencia guardada")
+            }
+        });
+    });
 });
 
 //obtener relacion entre metas evaluacion
@@ -22,7 +39,16 @@ $(document).ready(function () {
     })
     return valor
  }
+ function GuardarArchivo() {
+     
+ }
+function MostrarModalEvidencias(id,porcentaje) {
+    $('#formulario_subida_evidencias').trigger('reset');
+    $('#modal_subida_evidencia').modal('show');
+    $('#modal_subida_evidencia').val(id)
+    $('#id_porcentaje_esperado').val(porcentaje)
 
+}
  //cargar datos en la tabla
 function GargarTodo() {
     $('#tabla_lista_metas_evidencias').html('');
@@ -42,7 +68,6 @@ function GargarTodo() {
                     dataType: 'json',
                 })
                 .done(function(metasEval) {
-                    debugger
                     $.each(metasEval, function (index1,MetasE) {
                          
                         $.ajax({
@@ -53,13 +78,11 @@ function GargarTodo() {
                         .done(function(valorMeta) {
                             var periodo = '<tr id="metaeval' + MetasE.idmeta_evaluacion + '">\
                             <td>'+ c + '</td>\
-                            <td>vacio1</td>\
-                            <td>vacio2</td>\
-                            <td>Activa</td>\
+                            <td class="text-success">Activa</td>\
                             <td>'+ valorMeta.descripcion + '</td>\
                             <td>'+ poaA.fecha_inicio_evaluacion + '</td>\
                             <td>'+ poaA.fecha_fin_evaluacion + '</td>\
-                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" value="'+MetasE.idmeta_evaluacion+'">Evidencia</button></td></tr>'
+                            <td><button class="btn btn-info upload_evd" id="metaeva'+MetasE.idmeta_evaluacion+'" onClick="MostrarModalEvidencias('+MetasE.idmeta_evaluacion+','+MetasE.porcentaje+')">Evidencia</button></td></tr>'
     
                             $('#tabla_lista_metas_evidencias').append(periodo);
                             c++
@@ -80,13 +103,3 @@ function GargarTodo() {
     );
 }
 
-// id_periodo = val.id;
-//                 var periodo = '<tr id="periodo' + val.id + '">\
-//                 <td>'+ c++ + '</td>\
-//                 <td>'+ val.descripcion + '</td>\
-//                 <td>'+ val.fecha_inicio + '</td>\
-//                 <td>'+ val.fecha_fin + '</td>\
-//                 <td>'+ val.estado + '</td>\
-//                 <td><button class="btn btn-success abrir_modal" id="periodo'+ val.id + '" value="' + val.id + '">Abrir Periodo</button></td>\
-//                 <td><button class="btn btn-danger" id="periodo'+ val.id + '" value="' + val.id + '">Eliminar Periodo</button></td></tr>'
-//                 $('#tabla_periodos').append(periodo);
