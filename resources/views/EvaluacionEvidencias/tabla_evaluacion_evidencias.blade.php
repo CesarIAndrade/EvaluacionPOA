@@ -1,4 +1,4 @@
-<div class="w-75 p-3 container">
+<div class="w-75 p-3 container table-bordered">
   <table class="table table-hover">
     <thead class="bg-info text-light">
       <tr>
