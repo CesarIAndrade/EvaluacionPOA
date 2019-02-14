@@ -4,8 +4,6 @@
         <th scope="col">#</th>
         <th scope="col">Evaluacion</th>
         <th scope="col">Meta</th>
-        <th scope="col">Fecha de inicio evaluacion</th>
-        <th scope="col">Fecha fin evaluacion</th>
         <th scope="col">Evidencia</th>
       </tr>
     </thead>

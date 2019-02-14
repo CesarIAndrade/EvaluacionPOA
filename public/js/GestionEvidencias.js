@@ -26,7 +26,7 @@ $(document).ready(function () {
             }
         });
         $('#formulario_subida_evidencias').trigger('reset');
-        //$('#nombre_archivo').text('Subir Archivo');
+        $('#nombre_archivo').text('Subir Archivo');
         $('#modal_subida_evidencia').modal('hide');
     });
 });
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
 function MostrarModalEvidencias(id, porcentaje) {
     $('#formulario_subida_evidencias').trigger('reset');
-    //$('#nombre_archivo').text('Subir Archivo');
+    $('#nombre_archivo').text('Subir Archivo');
     $('#modal_subida_evidencia').modal('show');
     $('#formulario_subida_evidencias').val(id);
     $.get("buscarEvidencia/"+id, function (data) {
