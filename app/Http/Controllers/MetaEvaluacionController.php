@@ -7,11 +7,10 @@ use App\EvaluacionPoa;
 use App\Meta;
 use App\Indicadores;
 use App\Proyectos;
-use Response;
-use Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Response;
+use Storage;
 class MetaEvaluacionController extends Controller
 {
     /**
@@ -102,10 +101,18 @@ class MetaEvaluacionController extends Controller
         return Response::json($metaeval);
     }
 
-    public function GuardarArchivo(request $request,$id)
+    public function GuardarArchivo(request $request, $id)
     {
         $metaeval=MetaEvaluacion::find($id);
+        $metaeval->porcentaje_cumplido=$request->porcentaje_cumplido;
+        if ($request->hasFile('archivo')){ 
+            $archivo=$request->file('archivo');
+            $ruta=time().'_'.$archivo->getClientOriginalName();
+            Storage::disk('ArchivosSubidos')->put($ruta, file_get_contents($archivo->getRealPath()));
+            $metaeval->evidencia=$ruta;
+            $metaeval->save();
+            return Response::json($metaeval);
+         } 
         
-        return Response::json($metaeval);
     }
 }
