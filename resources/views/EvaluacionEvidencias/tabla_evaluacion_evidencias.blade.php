@@ -1,4 +1,5 @@
-<table class="table">
+<div class="w-75 p-3 container">
+  <table class="table table-hover">
     <thead class="bg-info text-light">
       <tr>
         <th scope="col">#</th>
@@ -11,3 +12,4 @@
         
     </tbody>
   </table>
+</div>
