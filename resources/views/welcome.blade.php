@@ -85,9 +85,6 @@
                 </div>
 
                 <div class="links">
-                    <a href="/periodo">Gestión Periodos</a>
-                    <a href="/evidencias">Gestión de Evidencias</a>
-                    <a href="/evaluacion_evidencias">Evaluación de Evidencias</a>
                     <a href="periodo">Gestión Periodos</a>
                     <a href="evidencias">Gestión de Evidencias</a>
                     <a href="evaluacion_evidencias">Evaluación de Evidencias</a>

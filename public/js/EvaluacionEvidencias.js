@@ -97,7 +97,7 @@ function GargarTodo() {
                             
                             if(MetasE.porcentaje_evaluado==null||MetasE.porcentaje_evaluado==''){
                                 valor3='No evaluado'
-                                valor4='text-warning'
+                                valor4='text-danger'
                             }
                             else{
                                 valor3='Evaluado'
