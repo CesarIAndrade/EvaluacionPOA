@@ -1,7 +1,7 @@
-var id_periodo;
-var etapa_seleccionada;
-var estado;
+var id_periodo, etapa_seleccionada, estado;
 $(document).ready(function () {
+    obtener_fecha_limite();
+    llenar_fecha();
     listar_periodos();
     $('body').on('click', '.abrir_modal', function () {
         id_periodo = $(this).val();
@@ -19,6 +19,7 @@ $(document).ready(function () {
     // Modificar Campos para abrir periodo de evaluacion
     $('#habilitar_periodo_de_evaluacion').click(function (e) {
         e.preventDefault();
+        validar_fecha();
         crear_periodo();
     })
 });
@@ -50,13 +51,13 @@ function crear_periodo() {
                 <td><button type = "button" class="'+clase[0]+' seleccionado" id="etapa' + val.id + '" value="' + val.id + '" '+clase[2]+'>'+clase[1]+'</button></td></tr>'
             $('#etapa' + val.id).replaceWith(etapa);
             $('#modal_apertura_periodo').trigger('reset');
+            $('#id_md_fecha_fin_periodo').val('');
+            document.getElementById('id_md_fecha_fin_periodo').disabled = true;
         },
         error: function (val) {
             console.log('Error:', val)
         }
     });
-    $('#id_md_fecha_fin_periodo').val('');
-    document.getElementById('id_md_fecha_fin_periodo').disabled = true;
 }
 
 function listar_periodos() {
@@ -127,4 +128,38 @@ function marcar_dispositivos(objeto){
         $(objeto).removeClass('btn btn-info');
         $(objeto).addClass('btn btn-danger');
     }
+}
+
+function obtener_fecha_limite(){
+    var f = new Date();
+    var min = f.getFullYear() + '-01-01T00:00'
+    var max = f.getFullYear() + '-12-31T23:59';
+    $('#id_md_fecha_fin_periodo').attr('min', min);
+    $('#id_md_fecha_fin_periodo').attr('max', max);
+}
+
+function validar_fecha(){
+    let fecha_inicio = new Date($('#id_md_fecha_inicio_periodo').val());
+    let fecha_fin = new Date($('#id_md_fecha_fin_periodo').val());
+    if(fecha_fin.getDate() <= fecha_inicio.getDate()){
+        alert('fecha incorrecta');
+        $('#id_md_fecha_fin_periodo').val('');
+    }
+    else if((fecha_fin.getMonth()+1) < (fecha_inicio.getMonth()+1)){
+        alert('fecha incorrecta');
+        $('#id_md_fecha_fin_periodo').val('');
+    }
+}
+
+function llenar_fecha(){
+    var f = new Date();
+    var min;
+    if((f.getMonth()+1) <= 9){
+        min = f.getFullYear() + "-0" + (f.getMonth() +1) + "-" + f.getDate() + 'T00:00';
+    }
+    else{
+        min = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate() + 'T00:00';
+    }
+    $('#id_md_fecha_inicio_periodo').attr('min', min);
+    $('#id_md_fecha_inicio_periodo').val(min);
 }
