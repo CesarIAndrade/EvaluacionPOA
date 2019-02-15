@@ -155,10 +155,12 @@ function llenar_fecha(){
     var f = new Date();
     var min;
     if((f.getMonth()+1) <= 9){
-        min = f.getFullYear() + "-0" + (f.getMonth() +1) + "-" + f.getDate() + 'T00:00';
+        // min = f.getFullYear() + "-0" + (f.getMonth() +1) + "-" + f.getDate() + 'T00:00';
+        min = f.getFullYear() + "-0" + (f.getMonth() +1) + "-" + f.getDate() + 'T' +f.getHours()+":"+f.getMinutes()+":"+f.getSeconds(); 
     }
     else{
-        min = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate() + 'T00:00';
+        // min = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate() + 'T00:00';
+        min = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate() + 'T' +f.getHours()+":"+f.getMinutes()+":"+f.getSeconds(); 
     }
     $('#id_md_fecha_inicio_periodo').attr('min', min);
     $('#id_md_fecha_inicio_periodo').val(min);
