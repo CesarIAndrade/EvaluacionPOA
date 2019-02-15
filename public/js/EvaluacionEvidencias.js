@@ -55,7 +55,7 @@ function MostrarEvaluacion(id, porcentaje) {
             $('#id_tabla_evidencia_revisar').html('');
             var periodo = '<tr>\
             <td>'+ data.evidencia + '</td>\
-            <td><center><a class="btn btn-primary" target="_blank" href="/EvaluacionPOA/public/ArchivosSubidos/'+data.evidencia+'">Visualizar/Abrir</a></center></td></tr>'
+            <td><center><a class="btn btn-primary" target="_blank" href="/ArchivosSubidos/'+data.evidencia+'">Visualizar/Abrir</a></center></td></tr>'
             $('#id_tabla_evidencia_revisar').append(periodo);
         }
     },

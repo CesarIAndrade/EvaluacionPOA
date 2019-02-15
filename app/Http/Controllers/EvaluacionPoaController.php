@@ -109,7 +109,7 @@ class EvaluacionPoaController extends Controller
         elseif($request->estado == 'Deshabilitar'){
             $evaluacion_poa->estado = 'H';
         }
-        $evaluacion_poa->save();
+        // $evaluacion_poa->save();
         return response::json($evaluacion_poa);
     }
 }
