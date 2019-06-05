@@ -17,16 +17,16 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Gestion de evidencias
-Route::get('/evidencias', function () {return view('GestionEvidencias.gestion_evidencias');});
 Route::resource('/evidencia', 'MetaEvaluacionController');
+Route::get('/evidencias', function () {return view('GestionEvidencias.gestion_evidencias');});
 Route::get('/MetaEvaluacion/{id}', 'MetaEvaluacionController@ObtenerEvaluacion');
 Route::post('/subirEvidencia/{id}', 'MetaEvaluacionController@GuardarArchivo');
 Route::get('/buscarEvidencia/{id}', 'MetaEvaluacionController@buscar');
 Route::post('/evaluarEvidencia/{id}', 'MetaEvaluacionController@GuardarEvaluacion');
 
 // Periodos
-Route::get('/periodo', function () {return view('GestionPeriodo.gestion_periodo');});
 Route::resource('/periodos', 'PeriodoController');
+Route::get('/periodo', function () {return view('GestionPeriodo.gestion_periodo');});
 
 // Evaluacion Periodos
 Route::resource('/evaluacion_poa', 'EvaluacionPoaController');
@@ -47,3 +47,5 @@ Route::resource('/proyecto', 'ProyectosController');
 
 // Evaluacion Evidencias
 Route::get('/evaluacion_evidencias', function () {return view('EvaluacionEvidencias.evaluacion_evidencias');});
+//Route::resource('/evaluacionRutas', 'EvaluacionesRutasController');
+Route::get('/evaluacionRutas', 'EvaluacionesRutasController@ObtenerEvaluaciones');
