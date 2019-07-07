@@ -1,16 +1,19 @@
 function Generarpdf(){
-    var formData ={
-        ruta:"Reportes.prueba"
+    var formData = {
+        ruta:"welcome",
     } 
-    $.ajax({
-        type: "get",
-        url: "/reporteGenerate",
-        data: formData,
-        dataType: "json",
-        success: function (val) {
-            alert("Pdf Generado")
-        },
-        error: function (val) {
-            console.log('Error:', val)
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $.ajax({
+        type: "get",
+        url: "reporteGenerate",
+        data: formData,
+        dataType: "dataType",
+        success: function () {
+            alert();
+        }
+    });
+}

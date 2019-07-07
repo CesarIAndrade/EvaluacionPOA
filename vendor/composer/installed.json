@@ -1119,6 +1119,260 @@
             "league/flysystem-sftp": "<1.0.6"
         },
         "require-dev": {
+<<<<<<< HEAD
+=======
+            "illuminate/notifications": "~5.7",
+            "mockery/mockery": "^1.0",
+            "phpunit/phpunit": "^7.0"
+        },
+        "time": "2018-12-12T13:12:06+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Illuminate\\Notifications\\SlackChannelServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Notifications\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "Slack Notification Channel for laravel.",
+        "keywords": [
+            "laravel",
+            "notifications",
+            "slack"
+        ]
+    },
+    {
+        "name": "laravel/tinker",
+        "version": "v1.0.8",
+        "version_normalized": "1.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/tinker.git",
+            "reference": "cafbf598a90acde68985660e79b2b03c5609a405"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/tinker/zipball/cafbf598a90acde68985660e79b2b03c5609a405",
+            "reference": "cafbf598a90acde68985660e79b2b03c5609a405",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "~5.1",
+            "illuminate/contracts": "~5.1",
+            "illuminate/support": "~5.1",
+            "php": ">=5.5.9",
+            "psy/psysh": "0.7.*|0.8.*|0.9.*",
+            "symfony/var-dumper": "~3.0|~4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0|~5.0"
+        },
+        "suggest": {
+            "illuminate/database": "The Illuminate Database package (~5.1)."
+        },
+        "time": "2018-10-12T19:39:35+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Laravel\\Tinker\\TinkerServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\Tinker\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "Powerful REPL for the Laravel framework.",
+        "keywords": [
+            "REPL",
+            "Tinker",
+            "laravel",
+            "psysh"
+        ]
+    },
+    {
+        "name": "laraveles/spanish",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Laraveles/spanish.git",
+            "reference": "8835b6713473f5c383f684e3ca38e5b8a56e3a82"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Laraveles/spanish/zipball/8835b6713473f5c383f684e3ca38e5b8a56e3a82",
+            "reference": "8835b6713473f5c383f684e3ca38e5b8a56e3a82",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+            "illuminate/support": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "orchestra/testbench": "^3.4",
+            "phpunit/phpunit": "^5.6|^6.3|^7.0"
+        },
+        "time": "2019-04-09T11:06:59+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Laraveles\\Spanish\\SpanishServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laraveles\\Spanish\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Israel Ortuño",
+                "email": "ai.ortuno@gmail.com"
+            },
+            {
+                "name": "Cesar Garcia",
+                "email": "cesargb@gmail.com",
+                "homepage": "https://github.com/cesargb",
+                "role": "Developer"
+            }
+        ],
+        "description": "Conjunto de traducciones en español para Laravel",
+        "homepage": "https://github.com/Laraveles/spanish",
+        "keywords": [
+            "laravel",
+            "laraveles",
+            "spanish",
+            "traduccion"
+        ]
+    },
+    {
+        "name": "lcobucci/jwt",
+        "version": "3.2.5",
+        "version_normalized": "3.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lcobucci/jwt.git",
+            "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lcobucci/jwt/zipball/82be04b4753f8b7693b62852b7eab30f97524f9b",
+            "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-openssl": "*",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "mdanter/ecc": "~0.3.1",
+            "mikey179/vfsstream": "~1.5",
+            "phpmd/phpmd": "~2.2",
+            "phpunit/php-invoker": "~1.1",
+            "phpunit/phpunit": "~4.5",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "suggest": {
+            "mdanter/ecc": "Required to use Elliptic Curves based algorithms."
+        },
+        "time": "2018-11-11T12:22:26+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Lcobucci\\JWT\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Luís Otávio Cobucci Oblonczyk",
+                "email": "lcobucci@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+        "keywords": [
+            "JWS",
+            "jwt"
+        ]
+    },
+    {
+        "name": "league/flysystem",
+        "version": "1.0.49",
+        "version_normalized": "1.0.49.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/flysystem.git",
+            "reference": "a63cc83d8a931b271be45148fa39ba7156782ffd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a63cc83d8a931b271be45148fa39ba7156782ffd",
+            "reference": "a63cc83d8a931b271be45148fa39ba7156782ffd",
+            "shasum": ""
+        },
+        "require": {
+            "ext-fileinfo": "*",
+            "php": ">=5.5.9"
+        },
+        "conflict": {
+            "league/flysystem-sftp": "<1.0.6"
+        },
+        "require-dev": {
+>>>>>>> ec5a28610d8d0bb9b032ec10d066afdafc642cc8
             "phpspec/phpspec": "^3.4",
             "phpunit/phpunit": "^5.7.10"
         },

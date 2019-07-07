@@ -7,16 +7,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="">
-                <div class="modal-body">
-                    @include('GestionPeriodo.cuerpo_modal_periodo')
-                    @include('GestionPeriodo.tabla_evaluacion')
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" id = "habilitar_periodo_de_evaluacion">Habilitar periodo</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </form>
+            <div class="modal-body">
+                @include('GestionPeriodo.cuerpo_modal_periodo')
+                @include('GestionPeriodo.tabla_evaluacion')
+                @include('GestionPeriodo.modal_de_confirmacion')
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    Launch demo modal
+                </button>
+            </div>
         </div>
     </div>
 </div>

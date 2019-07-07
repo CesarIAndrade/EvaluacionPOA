@@ -43,6 +43,11 @@ return array(
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
+<<<<<<< HEAD
+=======
+    'Lcobucci\\JWT\\' => array($vendorDir . '/lcobucci/jwt/src'),
+    'Laraveles\\Spanish\\' => array($vendorDir . '/laraveles/spanish/src'),
+>>>>>>> ec5a28610d8d0bb9b032ec10d066afdafc642cc8
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
