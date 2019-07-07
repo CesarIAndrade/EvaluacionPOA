@@ -13,6 +13,7 @@
 Auth::routes();
 
 // Home
+
 Route::get('/', function () {return view('welcome');});
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -49,3 +50,9 @@ Route::resource('/proyecto', 'ProyectosController');
 Route::get('/evaluacion_evidencias', function () {return view('EvaluacionEvidencias.evaluacion_evidencias');});
 //Rutas Api EvaluacionMetas para llenar la tabla
 Route::get('/evaluacionRutas', 'EvaluacionesRutasController@ObtenerEvaluaciones');
+//Ruta de reportes
+
+Route::get('/resporteP', function () {return view('Reportes.principal');});
+Route::get('/reporteGenerate','GenerarPdfController@GenerarPDF');
+
+
