@@ -103,6 +103,7 @@ class ComposerStaticInit5804f51c99c37413da88994c40793647
         array (
             'League\\Flysystem\\' => 17,
             'Lcobucci\\JWT\\' => 13,
+            'Laraveles\\Spanish\\' => 18,
             'Laravel\\Tinker\\' => 15,
         ),
         'J' => 
@@ -300,6 +301,10 @@ class ComposerStaticInit5804f51c99c37413da88994c40793647
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
         ),
+        'Laraveles\\Spanish\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laraveles/spanish/src',
+        ),
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
@@ -429,8 +434,13 @@ class ComposerStaticInit5804f51c99c37413da88994c40793647
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\EvaluacionPoaController' => __DIR__ . '/../..' . '/app/Http/Controllers/EvaluacionPoaController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\IndicadoresController' => __DIR__ . '/../..' . '/app/Http/Controllers/IndicadoresController.php',
+        'App\\Http\\Controllers\\MetaController' => __DIR__ . '/../..' . '/app/Http/Controllers/MetaController.php',
+        'App\\Http\\Controllers\\MetaEvaluacionController' => __DIR__ . '/../..' . '/app/Http/Controllers/MetaEvaluacionController.php',
         'App\\Http\\Controllers\\PeriodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/PeriodoController.php',
+        'App\\Http\\Controllers\\ProyectosController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProyectosController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -439,12 +449,16 @@ class ComposerStaticInit5804f51c99c37413da88994c40793647
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Indicadores' => __DIR__ . '/../..' . '/app/Indicadores.php',
+        'App\\Meta' => __DIR__ . '/../..' . '/app/Meta.php',
+        'App\\MetaEvaluacion' => __DIR__ . '/../..' . '/app/MetaEvaluacion.php',
         'App\\Periodo' => __DIR__ . '/../..' . '/app/Periodo.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Proyectos' => __DIR__ . '/../..' . '/app/Proyectos.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
@@ -1980,6 +1994,8 @@ class ComposerStaticInit5804f51c99c37413da88994c40793647
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laraveles\\Spanish\\Commands\\InstallLang' => __DIR__ . '/..' . '/laraveles/spanish/src/Commands/InstallLang.php',
+        'Laraveles\\Spanish\\SpanishServiceProvider' => __DIR__ . '/..' . '/laraveles/spanish/src/SpanishServiceProvider.php',
         'Lcobucci\\JWT\\Builder' => __DIR__ . '/..' . '/lcobucci/jwt/src/Builder.php',
         'Lcobucci\\JWT\\Claim' => __DIR__ . '/..' . '/lcobucci/jwt/src/Claim.php',
         'Lcobucci\\JWT\\Claim\\Basic' => __DIR__ . '/..' . '/lcobucci/jwt/src/Claim/Basic.php',

@@ -7,5 +7,10 @@
     @include('GestionPeriodo.tabla_periodo')
 </div>
 
-<script src='js/GestionPeriodo.js'></script>
+<!-- <script src='js/GestionPeriodo.js'></script> -->
+
+<script src='js/prueba.js'></script>
+
+
 @endsection
+
