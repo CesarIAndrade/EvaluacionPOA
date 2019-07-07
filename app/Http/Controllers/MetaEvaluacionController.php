@@ -107,8 +107,8 @@ class MetaEvaluacionController extends Controller
     public function GuardarArchivo(request $request, $id)
     {
         $metaeval=MetaEvaluacion::find($id);
-        $metaeval->porcentaje_cumplido=$request->porcentaje_cumplido;
         if ($request->hasFile('archivo')){ 
+            $metaeval->porcentaje_cumplido=$request->porcentaje_cumplido;
             $archivo=$request->file('archivo');
             $ruta=time().''.$archivo->getClientOriginalName();
             if ($metaeval->evidencia!=null):
@@ -124,9 +124,11 @@ class MetaEvaluacionController extends Controller
     public function GuardarEvaluacion(request $request, $id)
     {
         $metaeval=MetaEvaluacion::find($id);
-        $metaeval->porcentaje_evaluado=$request->porcentaje_evaluado;
-        $metaeval->save();
-        return Response::json($metaeval);  
+        if($request->porcentaje_cumplido!=null){
+            $metaeval->porcentaje_evaluado=$request->porcentaje_evaluado;
+            $metaeval->save();
+            return Response::json($metaeval);  
+        }
     }
     
 }

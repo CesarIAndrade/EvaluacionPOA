@@ -47,5 +47,5 @@ Route::resource('/proyecto', 'ProyectosController');
 
 // Evaluacion Evidencias
 Route::get('/evaluacion_evidencias', function () {return view('EvaluacionEvidencias.evaluacion_evidencias');});
-//Route::resource('/evaluacionRutas', 'EvaluacionesRutasController');
+//Rutas Api EvaluacionMetas para llenar la tabla
 Route::get('/evaluacionRutas', 'EvaluacionesRutasController@ObtenerEvaluaciones');
