@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "e72fc5bf7b49aed92ab1553d0e3e5086",
-=======
     "content-hash": "9926f0182d301707874656b15bd450c5",
->>>>>>> ec5a28610d8d0bb9b032ec10d066afdafc642cc8
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -816,8 +812,6 @@
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
-<<<<<<< HEAD
-=======
             "autoload": {
                 "psr-4": {
                     "Illuminate\\Notifications\\": "src/"
@@ -1045,7 +1039,6 @@
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
->>>>>>> ec5a28610d8d0bb9b032ec10d066afdafc642cc8
             "require-dev": {
                 "phpspec/phpspec": "^3.4",
                 "phpunit/phpunit": "^5.7.10"

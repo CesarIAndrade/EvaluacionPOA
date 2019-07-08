@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 class GenerarPDFController extends Controller
 {
     public function GenerarPDF($ruta, $tipo)

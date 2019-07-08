@@ -11,14 +11,9 @@
         "php": "^7.1.3",
         "barryvdh/laravel-dompdf": "^0.8.4",
         "fideloper/proxy": "^4.0",
-<<<<<<< HEAD
-        "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
-=======
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laraveles/spanish": "^1.2"
->>>>>>> ec5a28610d8d0bb9b032ec10d066afdafc642cc8
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

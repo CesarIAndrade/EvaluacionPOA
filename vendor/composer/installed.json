@@ -1119,8 +1119,6 @@
             "league/flysystem-sftp": "<1.0.6"
         },
         "require-dev": {
-<<<<<<< HEAD
-=======
             "illuminate/notifications": "~5.7",
             "mockery/mockery": "^1.0",
             "phpunit/phpunit": "^7.0"
@@ -1372,7 +1370,6 @@
             "league/flysystem-sftp": "<1.0.6"
         },
         "require-dev": {
->>>>>>> ec5a28610d8d0bb9b032ec10d066afdafc642cc8
             "phpspec/phpspec": "^3.4",
             "phpunit/phpunit": "^5.7.10"
         },
