@@ -14,7 +14,9 @@ Auth::routes();
 
 // Home
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Gestion de evidencias
@@ -59,5 +61,7 @@ Route::get('/evaluacion_evidencias', function () {
 Route::get('/evaluacionRutas', 'EvaluacionesRutasController@ObtenerEvaluaciones');
 
 //Ruta de reportes
-Route::get('/reporteP', function () {return view('Reportes.principal');});
+Route::get('/reporteP', function () {
+    return view('Reportes.principal');
+})->middleware('auth');
 Route::get('/reporteGenerate/{ruta}/{tipo}','GenerarPDFController@GenerarPDF');
