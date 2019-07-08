@@ -57,7 +57,7 @@ Route::get('/evaluacion_evidencias', function () {
 
 //Rutas Api EvaluacionMetas para llenar la tabla
 Route::get('/evaluacionRutas', 'EvaluacionesRutasController@ObtenerEvaluaciones');
-//Ruta de reportes
 
+//Ruta de reportes
 Route::get('/reporteP', function () {return view('Reportes.principal');});
 Route::get('/reporteGenerate/{ruta}/{tipo}','GenerarPDFController@GenerarPDF');
