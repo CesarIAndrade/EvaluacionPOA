@@ -25,7 +25,7 @@ $(document).on("submit","#formulario_evaluacion_evidencias",function (e) {
         data: formData,
         dataType: "json",
         success: function (val) {
-            alert("Evidencia evaluada")
+            alertify.success('Evaluacion realizada');
             CargarPeriodosActivos();
 
         },

@@ -20,7 +20,7 @@ $(document).ready(function () {
             processData:false,
             dataType: "json",
             success: function (val) {
-                alert("Evidencia almacenada correctamente")
+                alertify.success('Evidencia almacenada correctamente');
             },
             error: function (val) {
                 console.log('Error:', val)

@@ -60,4 +60,4 @@ Route::get('/evaluacionRutas', 'EvaluacionesRutasController@ObtenerEvaluaciones'
 //Ruta de reportes
 
 Route::get('/resporteP', function () {return view('Reportes.principal');});
-Route::get('/reporteGenerate','GenerarPDFController@GenerarPDF');
+Route::get('/reporteGenerate/{ruta}/{tipo}','GenerarPDFController@GenerarPDF');
